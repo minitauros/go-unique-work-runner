@@ -28,7 +28,7 @@ func Test_UniqueWorkRunner_Run(t *testing.T) {
 						_, _ = runner.Run(1, func() (int, error) {
 							// Make sure the work takes long enough for all the non-work-performing routines to queue up and wait for
 							// the result.
-							time.Sleep(50 * time.Millisecond)
+							time.Sleep(100 * time.Millisecond)
 
 							numWorkExecuted.Add(1)
 
@@ -57,7 +57,7 @@ func Test_UniqueWorkRunner_Run(t *testing.T) {
 							_, _ = runner.Run(workID, func() (int, error) {
 								// Make sure the work takes long enough for all the non-work-performing routines to queue up and wait for
 								// the result.
-								time.Sleep(50 * time.Millisecond)
+								time.Sleep(100 * time.Millisecond)
 
 								numWorkExecuted[workID].Add(1)
 
