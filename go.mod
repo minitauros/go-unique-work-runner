@@ -1,6 +1,6 @@
 module github.com/minitauros/go-unique-work-runner
 
-go 1.23.0
+go 1.24.1
 
 require github.com/smartystreets/goconvey v1.8.1
 
