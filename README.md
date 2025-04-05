@@ -19,13 +19,12 @@ func main() {
 
 	// Run the unique piece of work "refresh-login-token". If the work called 
 	// "refresh-login-token" is already being executed by another goroutine, the
-	// runner will return the WorkResult of the already active routine once it 
-	// finishes.
+	// runner will start new work, but rather wait for the WorkResult of the 
+	// routine that is doing the work as we speak.
 	res, _ := runner.Run("refresh-login-token", func() (WorkResult, error) {
 		return WorkResult{}, nil
 	})
 
-	// Do something with res.
 	doSomethingWith(res)
 }
 
